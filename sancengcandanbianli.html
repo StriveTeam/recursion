@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <ul id="menu"></ul>
+    <script>
+    var data = [{
+        "id": 1,
+        "icon": "icon",
+        "name": "用户",
+        "children": [{
+            "id": 9,
+            "parentId": 1,
+            "name": "认证用户",
+            "children": [{
+                "id": 29,
+                "parentId": 9,
+                "name": "A006【用户】【日报表】认证用户",
+                "url": "report!tyrzBusiness.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 2,
+        "icon": "icon",
+        "name": "流量",
+        "children": [{
+            "id": 10,
+            "parentId": 2,
+            "name": "访问流量",
+            "children": [{
+                "id": 31,
+                "parentId": 10,
+                "name": "A012【流量】【日报表】访问流量",
+                "url": "report!visitFlow.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 11,
+            "parentId": 2,
+            "name": "流量来源",
+            "children": [{
+                "id": 33,
+                "parentId": 11,
+                "name": "A017【流量】【日报表】流量来源",
+                "url": "report!trafficSource.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 12,
+            "parentId": 2,
+            "name": "访问频次",
+            "children": [{
+                "id": 34,
+                "parentId": 12,
+                "name": "A018【流量】【日报表】访问频次",
+                "url": "report!visitFrequency.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 13,
+            "parentId": 2,
+            "name": "访问深度",
+            "children": [{
+                "id": 35,
+                "parentId": 13,
+                "name": "A019【流量】【日报表】访问深度",
+                "url": "report!visitDepth.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 14,
+            "parentId": 2,
+            "name": "访问时长",
+            "children": [{
+                "id": 36,
+                "parentId": 14,
+                "name": "A020【流量】【日报表】访问时长",
+                "url": "report!visitTime.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 3,
+        "icon": "icon",
+        "name": "销量",
+        "children": [{
+            "id": 15,
+            "parentId": 3,
+            "name": "销售订单",
+            "children": [{
+                "id": 37,
+                "parentId": 15,
+                "name": "A003【销售】【日报表】销售订单",
+                "url": "report!saleOrder.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 16,
+            "parentId": 3,
+            "name": "商品销量",
+            "children": [{
+                "id": 39,
+                "parentId": 16,
+                "name": "A004【销售】【日报表】商品销售",
+                "url": "reportMonth!saleVolumeMonth.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 4,
+        "icon": "icon",
+        "name": "充值",
+        "children": [{
+            "id": 17,
+            "parentId": 4,
+            "name": "充值订单",
+            "children": [{
+                "id": 41,
+                "parentId": 17,
+                "name": "A001【充值】【日报表】充值订单",
+                "url": "report!recharge.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 5,
+        "icon": "icon",
+        "name": "查询",
+        "children": [{
+            "id": 18,
+            "parentId": 5,
+            "name": "业务查询",
+            "children": [{
+                "id": 43,
+                "parentId": 18,
+                "name": "A013【查询】【日报表】业务查询",
+                "url": "report!businessSelect.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 6,
+        "icon": "icon",
+        "name": "办理",
+        "children": [{
+            "id": 19,
+            "parentId": 6,
+            "name": "业务办理",
+            "children": [{
+                "id": 44,
+                "parentId": 19,
+                "name": "A024【办理】【日报表】业务办理",
+                "url": "report!businessHandle.shtml"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 7,
+        "icon": "icon",
+        "name": "质量",
+        "children": [{
+            "id": 20,
+            "parentId": 7,
+            "name": "统一接口",
+            "children": [{
+                "id": 45,
+                "parentId": 20,
+                "name": "A014【质量】【日报表】统一接口",
+                "url": "report!tyjkTotal.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 21,
+            "parentId": 7,
+            "name": "统一认证接口",
+            "children": [{
+                "id": 46,
+                "parentId": 21,
+                "name": "A015【质量】【日报表】统一认证接口",
+                "url": "report!operQualityTYRZ.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 22,
+            "parentId": 7,
+            "name": "页面响应时长",
+            "children": [{
+                "id": 48,
+                "parentId": 22,
+                "name": "A106【质量】【日报表】页面响应时长（基调）",
+                "url": "/jdjc"
+            }],
+            "url": "#"
+        }, {
+            "id": 23,
+            "parentId": 7,
+            "name": "断坏链管理",
+            "url": "#"
+        }],
+        "url": "#"
+    }, {
+        "id": 8,
+        "icon": "icon",
+        "name": "渠道",
+        "children": [{
+            "id": 24,
+            "parentId": 8,
+            "name": "一级门户",
+            "children": [{
+                "id": 50,
+                "parentId": 24,
+                "name": "A023【渠道】【一级门户】【日报表】门户访问流量",
+                "url": "report!wwwVisit.shtml",
+            
+            }],
+            "url": "#"
+        }, {
+            "id": 25,
+            "parentId": 8,
+            "name": "移动商城",
+            "children": [{
+                "id": 51,
+                "parentId": 25,
+                "name": "A002【渠道】【商城】【日报表】商城访问流量",
+                "url": "report!mmVisit.shtml"
+            }, {
+                "id": 52,
+                "parentId": 25,
+                "name": "A016【渠道】【商城】【日报表】首页各区域点击量",
+                "url": "report!mmHomeAreaHits.shtml"
+            }, {
+                "id": 53,
+                "parentId": 25,
+                "name": "A005【渠道】【商城】【日报表】增值业务",
+                "url": "report!mmIncrement.shtml"
+            }, {
+                "id": 54,
+                "parentId": 25,
+                "name": "A011【渠道】【商城】【日报表】商品上下架",
+                "url": "report!goodsInfo.shtml"
+            }, {
+                "id": 55,
+                "parentId": 25,
+                "name": "A021【渠道】【商城】【日报表】终端销售转化率",
+                "url": "report!sellOut.shtml"
+            }, {
+                "id": 56,
+                "parentId": 25,
+                "name": "A022【渠道】【商城】【日报表】充值转化率",
+                "url": "report!rechargeChange.shtml"
+            }],
+            "url": "#"
+        }, {
+            "id": 26,
+            "parentId": 8,
+            "name": "手机营业厅",
+            "url": "#"
+        }, {
+            "id": 27,
+            "parentId": 8,
+            "name": "触屏版",
+            "url": "#"
+        }, {
+            "id": 28,
+            "parentId": 8,
+            "name": "一级WAP",
+            "children": [{
+                "id": 57,
+                "parentId": 28,
+                "name": "一级WAP整体运营日报",
+                "url": "/WAPOperatingRoom.Web/index.aspx"
+            }],
+            "url": "#"
+        }],
+        "url": "#"
+    }
+    ];
+
+    function appendMenuToContent(menu_list, parent) {
+        for (var menu in menu_list) {
+            //如果有子节点，则遍历该子节点
+            if (menu_list[menu].children) {
+                //创建一个子节点li
+                var li = $("<li></li>");
+                //将li的文本设置好，并马上添加一个空白的ul子节点，并且将这个li添加到父亲节点中
+                $(li).append('<a href="' + menu_list[menu].url + '">' + menu_list[menu].name + "</a>").append("<ul></ul>").appendTo(parent);
+                //将空白的ul作为下一个递归遍历的父亲节点传入
+                appendMenuToContent(menu_list[menu].children, $(li).children().eq(1));
+            }
+            //如果该节点没有子节点，则直接将该节点li以及文本创建好直接添加到父亲节点中
+            else {
+                $("<li></li>").append('<a href="' + menu_list[menu].url + '">' + menu_list[menu].name + "</a>").appendTo(parent);
+            }
+        }
+    }
+	appendMenuToContent(data, $('#menu'))
+	
+    </script>
+</body>
+
+</html>
